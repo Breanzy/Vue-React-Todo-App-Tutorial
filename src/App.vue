@@ -58,8 +58,8 @@
 
 <script setup>
 // IMPORTS
-import { ref, onUnmounted, onMounted } from "vue";
-c;
+import { ref, onMounted } from "vue";
+
 import { db } from "@/firebase";
 import {
     collection,
