@@ -2,75 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <!-- just to use vue package.  -->
-        <script src="https://unpkg.com/vue@3"></script>
-        <style>
-            @import "bulma/css/bulma.min.css";
-        </style>
+        <title>Todo</title>
     </head>
-
     <body>
-        <nav
-            id="linkID"
-            class="navbar"
-            role="navigation"
-            aria-label="main navigation"
-        >
-            <div class="navbar-brand">
-                <div v-for="link in link">
-                    <a class="navbar-item"> {{link.name}} </a>
-                </div>
-            </div>
-        </nav>
+        <div id="app"></div>
 
-        <!-- test-id is used to track which part will vue attach the template -->
-        <div id="test-id">
-            <!-- {{}} is used to put in variables from vue template -->
-            <p>{{message}}</p>
-        </div>
-        <!-- vue directive. It's used for a lot of vue related html thingy -->
-        <!-- for this specific directive, we are for looping through all the variables in link -->
-        <div id="arrayTest">
-            <ul>
-                <li v-for="link in array"><a>{{link}}</a></li>
-            </ul>
-        </div>
-
-        <script>
-            // creates a new Vue instance and mount it to the #test-id element
-            Vue.createApp({
-                // This lists all data that can be inserted to the created app. Notice message variable is returned and used by the html code above
-                data() {
-                    return {
-                        message: "Hello, sdf.js!",
-                    };
-                },
-                // mount means to put all this data into the element that contains this id
-            }).mount("#test-id");
-
-            Vue.createApp({
-                data() {
-                    return {
-                        // this is like an object type of data. Useful for url routing
-                        link: [
-                            { text: "Index", url: "index.html" },
-                            { text: "About", url: "about.html" },
-                            { text: "Contact", url: "contact.html" },
-                        ],
-                    };
-                },
-            }).mount("#linkID");
-
-            Vue.createApp({
-                data() {
-                    return {
-                        // this is like an array of values that can be passed
-                        array: ["hello", "world", "eksdee"],
-                    };
-                },
-            }).mount("#arrayTest");
-        </script>
+        <script type="module" src="/src/main.js"></script>
     </body>
 </html>

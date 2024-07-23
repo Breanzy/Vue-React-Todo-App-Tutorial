@@ -20,9 +20,11 @@
             </div>
         </form>
 
+        <div v-for=""></div>
+
         <div
-            v-for="todo in todos"
-            class="card"
+            v-for="todo in todos" :key = "todo.id"
+            class="card" 
             :class="{ 'has-background-success-dark': todo.done }"
         >
             <div class="card-content">
